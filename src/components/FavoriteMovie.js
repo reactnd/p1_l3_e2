@@ -1,35 +1,26 @@
 import React, { Component } from 'react';
 
 class FavoriteMovie extends Component {
-
   constructor(props) {
     super(props);
+    this.movieArr = [];
 
-    const {profiles, movies, users} = this.props;
+    const { profiles, movies, users } = this.props;
 
-
-    const movieArr = Object.keys(movies).map(key => {
-      return [movies[key].name, []]
+    this.movieArr = Object.keys(movies).map(key => {
+      return [movies[key].name, []];
     });
 
     profiles.forEach(profile => {
       const userName = users[profile.userID].name;
-      movieArr[profile.favoriteMovieID -1][1].push(userName)
-    })
+      this.movieArr[profile.favoriteMovieID - 1][1].push(userName);
+    });
+  }
 
-
-    console.log(movieArr)
-
-
-    } 
- 
   render() {
-
-    const movieArr = this.movieArr
-
     return (
       <div>
-        {console.log(movieArr)}
+        {console.log(this.movieArr)}
         <h2>Forrest Gump</h2>
         <p>Liked By:</p>
         <ul>
