@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ShowMovies from './ShowMovies'
 
 class FavoriteMovie extends Component {
   constructor(props) {
@@ -20,22 +21,7 @@ class FavoriteMovie extends Component {
   render() {
     return (
       <div>
-        {console.log(this.movieArr)}
-        <h2>Forrest Gump</h2>
-        <p>Liked By:</p>
-        <ul>
-          <li>Nicholas Lain</li>
-        </ul>
-
-        <h2>Get Out</h2>
-        <p>Liked By:</p>
-        <ul>
-          <li>John Doe</li>
-          <li>Autumn Green</li>
-        </ul>
-
-        <h2>Autumn Green</h2>
-        <p>None of the current users liked this movie</p>
+        <ShowMovies movieArr={this.movieArr} />
       </div>
     );
   }
